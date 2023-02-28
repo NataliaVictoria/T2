@@ -22,3 +22,8 @@ La función realiza una búsqueda exhaustiva en una matriz de enteros para encon
 
 La función `read_user_input`, es una función de sistema que lee una cadena de entrada desde la consola y la devuelve como una cadena de caracteres. La función utiliza una llamada al sistema (syscall) para leer la entrada del usuario. El valor
 
+### Función de conversión de código ASCII a números enteros
+
+La función **`my_atoi`** convierte una cadena de caracteres en un número entero. Toma un argumento de entrada que es un puntero a la cadena de caracteres y devuelve el valor entero correspondiente. La implementación utiliza un bucle para leer los caracteres de la cadena y calcular el valor entero correspondiente.
+
+Finalmente la función **`main`** es el punto de entrada de la aplicación. Llama a **`read_user_input`** para leer un número entero del usuario y luego llama a **`exhaustive_search`** para buscar ese número en la matriz. Finalmente, la función **`main`** imprime el resultado en la salida estándar.
