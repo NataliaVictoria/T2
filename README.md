@@ -17,6 +17,7 @@ El resultado de esta práctica es un archivo con código ensamblador ARM para Co
 La función `exhaustive_search` toma tres argumentos y devuelve un entero. 
 
 La función realiza una búsqueda exhaustiva en una matriz de enteros para encontrar un valor dado. Si el valor se encuentra, se devuelve el índice de la posición en la matriz donde se encuentra el valor. Si el valor no se encuentra, se devuelve -1.
+![image](https://user-images.githubusercontent.com/126529855/221741104-b8050d95-04bf-4432-8d1e-160035e770de.png)
 
 ### Función de lectura
 
