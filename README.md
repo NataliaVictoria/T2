@@ -27,3 +27,5 @@ La función `read_user_input`, es una función de sistema que lee una cadena de 
 La función **`my_atoi`** convierte una cadena de caracteres en un número entero. Toma un argumento de entrada que es un puntero a la cadena de caracteres y devuelve el valor entero correspondiente. La implementación utiliza un bucle para leer los caracteres de la cadena y calcular el valor entero correspondiente.
 
 Por último la función **`main`** es el punto de entrada de la aplicación. Llama a **`read_user_input`** para leer un número entero del usuario y luego llama a **`exhaustive_search`** para buscar ese número en la matriz. Finalmente, la función **`main`** imprime el resultado en la salida estándar.
+![image](https://user-images.githubusercontent.com/126529855/221741451-1a0b7f2f-1aa6-42ad-a534-f77a52a69105.png)
+Team Frito
