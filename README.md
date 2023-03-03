@@ -26,13 +26,13 @@ Posterior al salir del ciclo for se inicializan los valores **`key`** y **`res`*
 Seguidamente, llama a la función **`exhaustive_search`** que guardan los argumentos que necesarios (key, 10 y a). Donde key es el número que a buscar.
 
 Al final se guarda el resultado de la función en **`index`** para que sea comparado con el if, si entra al if este cambia el valor de **`res`** para ver si se encontró el número o no. 
-Una vez salga del if entra a la función **`int_to_string **` para transformar los números enteros a un String al salir de dicha función se hace uso de  **`display`** que imprime el resultado. Cuando termine de imprimir comienza con el epílogo para terminar el programa.
+Una vez salga del if entra a la función **`int_to_string`** para transformar los números enteros a un String al salir de dicha función se hace uso de  **`display`** que imprime el resultado. Cuando termine de imprimir comienza con el epílogo para terminar el programa.
 
 La función **`exhaustive_search`** primero inicia el prólogo, una vez hecho empieza con guardando cada argumento que llamo (**`*a,size y key`**) para después inicializar y guardar el índex (con valor 9999 para evitar utilizar números negativos). 
 
-Posteriormente, entra a un bucle for, dentro del bucle for hay un if donde se hace una comparativa con el key y el arreglo. En donde, siguiendo las convenciones correspondiente (convenciones del arreglo y el if) buscar que **`key**` y el valor del arreglo no sean iguales. En caso de que sean iguales no entra al if y vuelve a iniciar el ciclo for hasta que se cumpla la condición.
-En caso contrario, carga el valor de i (es decir la posición del arreglo) en **`índex**` y saldrá inmediatamente de la estructura if y for, debido a que hay un break.
-Siendo este el caso inmediatamente hará un return con *`índex**` como el valor que regresa la función. Después de guardar el *`índex**` se realiza el epílogo para darle fin a la función.
+Posteriormente, entra a un bucle for, dentro del bucle for hay un if donde se hace una comparativa con el key y el arreglo. En donde, siguiendo las convenciones correspondiente (convenciones del arreglo y el if) buscar que **`key`** y el valor del arreglo no sean iguales. En caso de que sean iguales no entra al if y vuelve a iniciar el ciclo for hasta que se cumpla la condición.
+En caso contrario, carga el valor de i (es decir, la posición del arreglo) en **`índex`** y saldrá inmediatamente de la estructura if y for, debido a que hay un break.
+Siendo este el caso, inmediatamente hará un return con **`índex`** como el valor que regresa la función. Después de guardar el **`índex`** se realiza el epílogo para darle fin a la función.
 
 ### Función de lectura
 
@@ -76,17 +76,30 @@ arm-run ./ExhaustiveSeach.elf
 Para crear los marcos de función se han tenido las siguientes consideraciones:
 
 - El marco se crea en múltiplos de 8
-- La pila crece hacia arriba
 - Se sigue el orden del esquema:
-![image](https://user-images.githubusercontent.com/89500688/222765755-37732b08-ef45-4505-9fa4-a2eb330792d9.png)
 
-### display
-![image](https://user-images.githubusercontent.com/89500688/222765835-6a1028ff-b5c9-4d11-8a46-edb47a7273ed.png)
+![image](https://user-images.githubusercontent.com/89500688/222771235-a71effa1-a210-4bfd-854a-fd212945bd5c.png)
 
-### int_to_string
-![image](https://user-images.githubusercontent.com/89500688/222765967-a6e268a9-151d-4d45-adfe-5d3368c42d8b.png)
+### exhaustive_search
+![image](https://user-images.githubusercontent.com/89500688/222769863-0697afae-e5db-45fa-973a-5110f99a1a6f.png)
+
+### read_user_input
+![image](https://user-images.githubusercontent.com/89500688/222770124-7f6d58c5-35b4-41a2-937a-b97c3055b964.png)
 
 ### my_atoy
-![image](https://user-images.githubusercontent.com/89500688/222766035-ff4db5c9-7df0-4291-8d8b-047cd0c46470.png)
+![image](https://user-images.githubusercontent.com/89500688/222770334-f57f8836-a5e6-4f1a-9f0f-260a5a908a6f.png)
 
-### read_user_Imput
+### int_to_string
+![image](https://user-images.githubusercontent.com/89500688/222770937-836ca49a-3f2c-4be6-96f1-0338cf2c5ca9.png)
+
+### display
+![image](https://user-images.githubusercontent.com/89500688/222771714-abf785a4-66fb-430d-a180-5fe7615f90a2.png)
+
+### main
+![image](https://user-images.githubusercontent.com/89500688/222772004-6d0a6e80-7e6a-4236-aae2-47f0487dccd7.png)
+
+
+
+
+
+
