@@ -12,9 +12,9 @@ El resultado de esta práctica es un archivo con código ensamblador ARM para Co
 4. Función de conversión de código ASCII a números enteros
 ---
 
-### Función que procesa los elementos de un arreglo
+### Función Original (main y exhaustive search)
 
-La función `exhaustive_search` toma tres argumentos y devuelve un entero. 
+La función `main empezara` alamcenando 5 elementos del arreglo para despues entrar a un ciclo for donde dentro de este for va a leer cada uno de los valores por lo que entrara a **`read_user_input`** para despues ese valor sea guardado en el arreglo (siguiendo las convenciones del arreglo en ensamblador), despues de salir de ese for se inicializara los valor **`key`** y **`res`** para que luego llame la funcion **`exhaustive_search`**, en dodnde guardaremos nuestros argumentos que necesitemos (key, 10 y a) donde key es el numero que buscaremos, al final guardaremos nuestro resultado de la funcion en **`index`** para que sea comparado con el if y si entra al if este cambiara el valor de res para ver si se encontro el numero o no, despues de salir se entrara poco despues a la funcion **`int_to_string`** para tranfromar numeros enteros a un String y despues de terminar esa funcion usaremos el **`display`** para que imprima y cuando termine de imprimir comenzara el epilogo para terminar el programa.
 
 La función realiza una búsqueda exhaustiva en una matriz de enteros para encontrar un valor dado. Si el valor se encuentra, se devuelve el índice de la posición en la matriz donde se encuentra el valor. Si el valor no se encuentra, se devuelve -1.
 
