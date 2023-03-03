@@ -36,8 +36,7 @@ Para poder compilar nuestro código necesitaremos seguir los siguientes pasos:
 - Primero pasaremos nuestro código en C a ensamblador con el siguiente comando
 
 ```nasm
-arm-gcc ExhaustiveSearch.c -S -march=armv7-m -
-mtune=cortex-m3.
+arm-gcc ExhaustiveSearch.c -S -march=armv7-m -mtune=cortex-m3.
 ```
 
 - Una vez modificado nuestro código en lenguaje ensamblador, tendremos que traducirlo a código objeto, esto con el fin de que nuestro compilador.
