@@ -27,3 +27,33 @@ La función `read_user_input`, es una función de sistema que lee una cadena de 
 La función **`my_atoi`** convierte una cadena de caracteres en un número entero. Toma un argumento de entrada que es un puntero a la cadena de caracteres y devuelve el valor entero correspondiente. La implementación utiliza un bucle para leer los caracteres de la cadena y calcular el valor entero correspondiente.
 
 Por último la función **`main`** es el punto de entrada de la aplicación. Llama a **`read_user_input`** para leer un número entero del usuario y luego llama a **`exhaustive_search`** para buscar ese número en la matriz. Finalmente, la función **`main`** imprime el resultado en la salida estándar.
+
+
+# Compilación
+
+Para poder compilar nuestro código necesitaremos seguir los siguientes pasos: 
+
+- Primero pasaremos nuestro código en C a ensamblador con el siguiente comando
+
+```nasm
+arm-gcc ExhaustiveSearch.c -S -march=armv7-m -
+mtune=cortex-m3.
+```
+
+- Una vez modificado nuestro código en lenguaje ensamblador, tendremos que traducirlo a código objeto, esto con el fin de que nuestro compilador.
+
+```nasm
+arm-as ExhaustiveSearch.s -o ExhaustiveSeach.o
+```
+
+- Después enlazaremos nuestro código objeto con la biblioteca estándar; esto con el fin de que la función **`main`** pueda ejecutarse (la parte del comando s**tatic**  se encarga de que nuestro archivo no se enlace con bibliotecas estándar).
+
+```nasm
+arm-gcc ./ExhaustiveSeach.o -o ./ExhaustiveSeach.elf -static
+```
+
+- Por ultimo ejecutaremos nuestro programa, que ya se encuentra en formato .elf (Formato Ejecutable y Vinculable) con ayuda del siguiente comando:
+
+```nasm
+arm-run ./ExhaustiveSeach.elf
+```
