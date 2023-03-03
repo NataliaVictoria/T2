@@ -11,12 +11,28 @@ El resultado de esta práctica es un archivo con código ensamblador ARM para Co
 3. Función de escritura
 4. Función de conversión de código ASCII a números enteros
 ---
+# Funcionamiento del código
 
-### Función Original (main y exhaustive search)
+### Explicación breve
 
-La función `**`main`** empezara` alamcenando 5 elementos del arreglo para despues entrar a un ciclo for donde dentro de este for va a leer cada uno de los valores por lo que entrara a **`read_user_input`** para despues ese valor sea guardado en el arreglo (siguiendo las convenciones del arreglo en ensamblador), despues de salir de ese for se inicializara los valor **`key`** y **`res`** para que luego llame la funcion **`exhaustive_search`**, en dodnde guardaremos nuestros argumentos que necesitemos (key, 10 y a) donde key es el numero que buscaremos, al final guardaremos nuestro resultado de la funcion en **`index`** para que sea comparado con el if y si entra al if este cambiara el valor de res para ver si se encontro el numero o no, despues de salir se entrara poco despues a la funcion **`int_to_string`** para tranformar los numeros enteros a un String y despues de terminar esa funcion usaremos el **`display`** para que imprima y cuando termine de imprimir comenzara el epilogo para terminar el programa.
+La función implementada es **`exhaustive_search`** esta función toma tres argumentos y devuelve un entero. 
 
-La función **`exhaustive_search`** despues de iniciar el prologo empezar con guardando cada argumento que llamo (**`*a,size y key`**) para despues inicializar el index (con valor 9999 para evitar usar numeros negativos) y lo guardara para que luego entre a un bulbe for dentro de ese bucle for estara un if donde se hara una comparativa con el key y el arreglo de a donde siguiendo las convenciones correspondiente (convencione del arreglo y el if) veremos si key y el valor del arreglo a no sean iguales en caso que sean iguales no entreara al if y volvera a iniciar el ciclo for hasta que se cumpla la condicion pero en caso contrario cargara el valor de i (la posicion del arreglo) en index he inmediatamente saldra del if y for ya que hay un break y inmediatamente hara un return siendo index el valor que regresara la funcion, despues de guardar el index se realizara el epilogo para darle fin a la funcion.
+La función realiza una búsqueda exhaustiva en una matriz de enteros para encontrar un valor dado (en este caso el valor llave es 10). Si el valor se encuentra, se devuelve el índice de la posición en la matriz donde se encuentra el valor. Si el valor no se encuentra, se devuelve el código 9999.
+
+### Explicación detallada (main y exhaustive search)
+
+La función **`main`** empieza almacenando 5 elementos del arreglo para después entrar a un ciclo for donde dentro de este for lee cada uno de los valores. Una vez hecho esto entra a la función **`read_user_input`** y guardar el valor en el arreglo (siguiendo las convenciones del arreglo en ensamblador)
+Posterior al salir del ciclo for se inicializan los valores **`key`** y **`res`**.
+Seguidamente, llama a la función **`exhaustive_search`** que guardan los argumentos que necesarios (key, 10 y a). Donde key es el número que a buscar.
+
+Al final se guarda el resultado de la función en **`index`** para que sea comparado con el if, si entra al if este cambia el valor de **`res`** para ver si se encontró el número o no. 
+Una vez salga del if entra a la función **`int_to_string **` para transformar los números enteros a un String al salir de dicha función se hace uso de  **`display`** que imprime el resultado. Cuando termine de imprimir comienza con el epílogo para terminar el programa.
+
+La función **`exhaustive_search`** primero inicia el prólogo, una vez hecho empieza con guardando cada argumento que llamo (**`*a,size y key`**) para después inicializar y guardar el índex (con valor 9999 para evitar utilizar números negativos). 
+
+Posteriormente, entra a un bucle for, dentro del bucle for hay un if donde se hace una comparativa con el key y el arreglo. En donde, siguiendo las convenciones correspondiente (convenciones del arreglo y el if) buscar que **`key**` y el valor del arreglo no sean iguales. En caso de que sean iguales no entra al if y vuelve a iniciar el ciclo for hasta que se cumpla la condición.
+En caso contrario, carga el valor de i (es decir la posición del arreglo) en **`índex**` y saldrá inmediatamente de la estructura if y for, debido a que hay un break.
+Siendo este el caso inmediatamente hará un return con *`índex**` como el valor que regresa la función. Después de guardar el *`índex**` se realiza el epílogo para darle fin a la función.
 
 ### Función de lectura
 
@@ -26,33 +42,51 @@ La función `read_user_input`, es una función de sistema que lee una cadena de 
 
 La función **`my_atoi`** convierte una cadena de caracteres en un número entero. Toma un argumento de entrada que es un puntero a la cadena de caracteres y devuelve el valor entero correspondiente. La implementación utiliza un bucle para leer los caracteres de la cadena y calcular el valor entero correspondiente.
 
-Por último la función **`main`** es el punto de entrada de la aplicación. Llama a **`read_user_input`** para leer un número entero del usuario y luego llama a **`exhaustive_search`** para buscar ese número en la matriz. Finalmente, la función **`main`** imprime el resultado en la salida estándar.
 
 
 # Compilación
 
-Para poder compilar nuestro código necesitaremos seguir los siguientes pasos: 
+Para poder compilar el código es necesario seguir los siguientes pasos: 
 
-- Primero pasaremos nuestro código en C a ensamblador con el siguiente comando
+- Primero pasar el código en C que contiene la función ExhaustiveSearch a ensamblador con el siguiente comando
 
 ```nasm
 arm-gcc ExhaustiveSearch.c -S -march=armv7-m -mtune=cortex-m3.
 ```
 
-- Una vez modificado nuestro código en lenguaje ensamblador, tendremos que traducirlo a código objeto, esto con el fin de que nuestro compilador.
+- Una vez modificado el código en lenguaje ensamblador, es necesario traducirlo a código objeto, esto con el fin de que nuestro compilador.
 
 ```nasm
 arm-as ExhaustiveSearch.s -o ExhaustiveSeach.o
 ```
 
-- Después enlazaremos nuestro código objeto con la biblioteca estándar; esto con el fin de que la función **`main`** pueda ejecutarse (la parte del comando s**tatic**  se encarga de que nuestro archivo no se enlace con bibliotecas estándar).
+- Después se enlaza el código objeto con la biblioteca estándar. Esto con el fin de que la función **`main`** pueda ejecutarse (la parte del comando **`static`**  se encarga de que el archivo no se enlace con bibliotecas estándar).
 
 ```nasm
 arm-gcc ./ExhaustiveSeach.o -o ./ExhaustiveSeach.elf -static
 ```
 
-- Por ultimo ejecutaremos nuestro programa, que ya se encuentra en formato .elf (Formato Ejecutable y Vinculable) con ayuda del siguiente comando:
+- Por último, se ejecuta programa, que ya se encuentra en formato .elf (Formato Ejecutable y Vinculable) con ayuda del siguiente comando:
 
 ```nasm
 arm-run ./ExhaustiveSeach.elf
 ```
+# Marcos de función
+
+Para crear los marcos de función se han tenido las siguientes consideraciones:
+
+- El marco se crea en múltiplos de 8
+- La pila crece hacia arriba
+- Se sigue el orden del esquema:
+![image](https://user-images.githubusercontent.com/89500688/222765755-37732b08-ef45-4505-9fa4-a2eb330792d9.png)
+
+### display
+![image](https://user-images.githubusercontent.com/89500688/222765835-6a1028ff-b5c9-4d11-8a46-edb47a7273ed.png)
+
+### int_to_string
+![image](https://user-images.githubusercontent.com/89500688/222765967-a6e268a9-151d-4d45-adfe-5d3368c42d8b.png)
+
+### my_atoy
+![image](https://user-images.githubusercontent.com/89500688/222766035-ff4db5c9-7df0-4291-8d8b-047cd0c46470.png)
+
+### read_user_Imput
