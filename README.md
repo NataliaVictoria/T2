@@ -40,12 +40,12 @@ La función `read_user_input`, es una función de sistema que lee una cadena de 
 
 ### Función de conversión de código ASCII a números enteros (**`my_atoi`**)
 
-#Argumentos en la función:#         Un apuntador con la dirección del arreglo
-#Variables dentro de la función:#   Contador-> Encargado de obtener el tamaño del string
+#Argumentos en la función:         Un apuntador con la dirección del arreglo
+#Variables dentro de la función:   Contador-> Encargado de obtener el tamaño del string
                                     Estado-> Guarda la posición en la que estamos dentro del string (1 = unidad, 2 = decena, 3 = centena, etc).
                                     Valor actual-> Cadeana de caracteres que contiene los datos en ASCII
                                     Digito-> Encargado de almacenar el valor en decimal obtenido por iteración.
-#Descripción de su funcionamiento:# Se inicia con un ciclo **`while`**, encargado, apoyandonos con la variable `contador` la cual alamcena el tamaño del string recibido; su condición de paro es un salto a la línea 0x10.
+#Descripción de su funcionamiento: Se inicia con un ciclo **`while`**, encargado, apoyandonos con la variable `contador` la cual alamcena el tamaño del string recibido; su condición de paro es un salto a la línea 0x10.
 Una vez hecho esto, retornamos a la posición inicial de nuestro string para procesar cada dígito.
 El siguiente paso viene establecido por un segundo ciclo **`while`**
 
