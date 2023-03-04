@@ -38,9 +38,25 @@ Siendo este el caso, inmediatamente hará un return con **`índex`** como el val
 
 La función `read_user_input`, es una función de sistema que lee una cadena de entrada desde la consola y la devuelve como una cadena de caracteres. La función utiliza una llamada al sistema (syscall) para leer la entrada del usuario. El valor
 
-### Función de conversión de código ASCII a números enteros
+### Función de conversión de código ASCII a números enteros (**`my_atoi`**)
 
-La función **`my_atoi`** convierte una cadena de caracteres en un número entero. Toma un argumento de entrada que es un puntero a la cadena de caracteres y devuelve el valor entero correspondiente. La implementación utiliza un bucle para leer los caracteres de la cadena y calcular el valor entero correspondiente.
+#Argumentos en la función:#         Un apuntador con la dirección del arreglo
+#Variables dentro de la función:#   Contador-> Encargado de obtener el tamaño del string
+                                    Estado-> Guarda la posición en la que estamos dentro del string (1 = unidad, 2 = decena, 3 = centena, etc).
+                                    Valor actual-> Cadeana de caracteres que contiene los datos en ASCII
+                                    Digito-> Encargado de almacenar el valor en decimal obtenido por iteración.
+#Descripción de su funcionamiento:# Se inicia con un ciclo **`while`**, encargado, apoyandonos con la variable `contador` la cual alamcena el tamaño del string recibido; su condición de paro es un salto a la línea 0x10.
+Una vez hecho esto, retornamos a la posición inicial de nuestro string para procesar cada dígito.
+El siguiente paso viene establecido por un segundo ciclo **`while`**
+
+La función **`my_atoi`** convierte una cadena de caracteres en un número entero. Toma un argumento de entrada que es un puntero a la cadena de caracteres y devuelve el valor entero correspondiente. La implementación utiliza un bucle para leer los caracteres de la cadena y calcular el valor entero correspondiente. Inicialmente se obtiene el caracter en ASCII en la posición `n`, dicho caracter pasa a transformarse en un decimal al restarle un 48 (dandonos su valor como entero). Por consiguiente se multiplica por el estado (encargado de decirnos su valor en unidad, decena o centena dependiendo la posición). Y se almacenará en la variable Digito; la cual con cada iteración recibirá un decimal de menor valor hasta llegar a 0.
+Ejemplo: 934 -> ASCII   Iteraciones a realizar =  Estado = 3
+  Iteración 1:  Digito = Digito + 900   ->    900
+  Iteración 2:  Digito = Digito + 30    ->    930
+  Iteración 3:  Digito = Digito + 4     ->    934.
+ 
+ La condición de paro vendrá cuando nuestra variable Estado sea igual a 0.
+ 
 
 
 
