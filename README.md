@@ -143,7 +143,7 @@ Para crear los marcos de función se han tenido las siguientes consideraciones:
 ![image](https://user-images.githubusercontent.com/89500688/222772004-6d0a6e80-7e6a-4236-aae2-47f0487dccd7.png)
 
 **Integrantes:**
-Este trabajo se realizó en conjunto por medio de reuniones en meet y fue hecho por la sigu9entes personas
+Este trabajo se realizó en conjunto por medio de reuniones en meet y fue hecho por la siguientes personas
 Natalia Victoria Nava
 Andrea Michelle Brady Chavez
 Damian Perez Benitez
